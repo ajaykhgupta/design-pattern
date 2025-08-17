@@ -1,0 +1,11 @@
+Entity:
+
+Question -> id, title, content, author, answers, comments, tags, votes, creation_date
+Answer -> id, content, author, votes, comments, associated_question, creation_date
+User -> id, user_name, email
+Comment -> id, content, author, creation_date
+Tags -> id, name (tags associated with question)
+Vote -> associated with question and answers.
+
+Stackoverflow -> it provides various methods for managing the Stackoverflow system.
+

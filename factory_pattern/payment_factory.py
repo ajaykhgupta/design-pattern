@@ -19,8 +19,6 @@ class PaymentFactory:
             {'CreditCardPayment': <class 'payment_methods.credit_card_payment.CreditCardPayment'>, 'GooglePayPayment': <class 'payment_methods.google_pay_payment.GooglePayPayment'>, 'PaypalPayment': <class 'payment_methods.paypal_payment.PaypalPayment'>}
         """
         for name, _type in implementations:
-            import pdb
-            pdb.set_trace()
             if isclass(_type) and issubclass(_type, payment_methods.Payment):
                 self.payment_implementations[name] = _type
             

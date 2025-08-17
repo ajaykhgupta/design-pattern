@@ -1,0 +1,39 @@
++-----------------+        +------------------+        +------------------+
+|     Player      |        |      Board       |        |   MoveValidator  |
++-----------------+        +------------------+        +------------------+
+| - name: str     |        | - size: int=3    |        |                  |
+| - symbol:Symbol |        | - grid: Symbol[][]|       | +validate(...)   |
++-----------------+        +------------------+        +------------------+
+| +get_move(ui):Move|      | +get(r,c):Symbol |        +------------------+
++-----------------+        | +set(r,c,Symbol) |
+                           | +is_empty(r,c):bool        +------------------+
+                           | +is_full():bool   |        |     Referee      |
+                           | +reset()          |        +------------------+
+                           | +get_lines():list |        | +check_winner(b):
+                           +-------------------+        |      Optional[Symbol]
+                                                       | +is_draw(b): bool |
+                                                       +-------------------+
+
++------------------------+
+|    TicTacToeGame       |
++------------------------+
+| - board: Board         |
+| - players: [Player,Player] |
+| - current: int         |
+| - validator: MoveValidator |
+| - referee: Referee     |
+| - ui: UI               |
++------------------------+
+| +run()                 |
+| +play_turn()           |
++------------------------+
+
++------------------+
+|       UI         |
++------------------+
+| +render(board)   |
+| +prompt_move(p)  |
+| +show_error(msg) |
+| +announce_winner(p)|
+| +announce_draw() |
++------------------+
